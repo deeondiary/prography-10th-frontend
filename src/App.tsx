@@ -1,16 +1,18 @@
 import { useState } from 'react'
 import './App.css'
 import {Route, Routes} from "react-router-dom";
-import Main from "./pages/Main.tsx";
-import Form from "./pages/Form.tsx";
+import MainPage from "./pages/MainPage.tsx";
+import FormPage from "./pages/FormPage.tsx";
+import Test from "./pages/Test.tsx";
 
 function App() {
 
   return (
     <>
         <Routes>
-            <Route path={'/'} element={<Main />} />
-            <Route path={'/form'} element={<Form />} />
+            <Route path={'/'} element={<MainPage />} />
+            <Route path={'/form'} element={<FormPage />} />
+            <Route path={'/test'} element={<Test />} />
         </Routes>
     </>
   )

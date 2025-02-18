@@ -4,3 +4,30 @@
   /*padding: 2rem;*/
   /*text-align: center;*/
 }
+
+/* 공통 css */
+.page-wrap {
+    padding: 32px;
+}
+.fx-align-center {
+    display: flex;
+    align-items: center;
+}
+.fx-all-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 이미지 지속 회전 */
+.rotate {
+    animation: rotation 8s infinite linear;
+}
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}

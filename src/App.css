@@ -1,14 +1,8 @@
 #root {
-  /*max-width: 1280px;*/
-  /*margin: 0 auto;*/
-  /*padding: 2rem;*/
-  /*text-align: center;*/
+    min-width: 320px;
 }
 
 /* 공통 css */
-.page-wrap {
-    padding: 32px;
-}
 .fx-align-center {
     display: flex;
     align-items: center;

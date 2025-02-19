@@ -1,7 +1,7 @@
 // import React from 'react';
 // import PropTypes from 'prop-types';
 import styled from 'styled-components'
-import {COLORS} from "../../constants/constants.tsx";
+import {COLORS} from "../global/constants.tsx";
 import {useEffect, useState} from "react";
 
 interface ButtonPropsType {
@@ -10,6 +10,8 @@ interface ButtonPropsType {
     color?: string;
     size?: string;
     borderRound?: boolean;
+    submit?: true;
+    disabled?: boolean;
 }
 
 function Button(props: ButtonPropsType) {
@@ -38,23 +40,25 @@ function Button(props: ButtonPropsType) {
     }, [props.size])
 
     return (
-        <ProButton color={props.color} size={fontSize} width={width}
+        <ButtonDesign color={props.color} size={fontSize} width={width} type={props.submit ? "submit" : "button"}
+                   disabled={props.disabled}
                    border-radius={props.borderRound ? '120px' : '4px'}
-                   onClick={props.onClick}>{props.children}</ProButton>
+                   onClick={props.onClick}>{props.children}</ButtonDesign>
     );
 }
 
-const ProButton
+const ButtonDesign
     = styled.button<{ size?: string, width?: string, 'border-radius'?: string }>`
-        background-color: ${(props) => props.color ? props.color : COLORS.PINK};
-        padding: 12px;
-        width: ${(props) => props.width ? props.width : '100px'};;
-        color: white;
-        cursor: pointer;
-        border: none;
-        border-radius: ${props => props['border-radius']};
-        font-size: ${(props) => props.size ? props.size : '12px'};
-        font-weight: 800;
-    `
+    background-color: ${(props) => props.color ? props.color : COLORS.PINK};
+    padding: 12px;
+    flex-shrink: 0;
+    width: ${(props) => props.width ? props.width : '100px'};
+    color: ${(props) => props.color === COLORS.GR_F9 ? COLORS.GR_DARK : 'white'};;
+    cursor: pointer;
+    border: none;
+    border-radius: ${props => props['border-radius']};
+    font-size: ${(props) => props.size ? props.size : '12px'};
+    font-weight: 700;
+`
 
 export default Button;

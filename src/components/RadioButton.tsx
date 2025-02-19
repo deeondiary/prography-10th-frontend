@@ -1,16 +1,24 @@
 import styled from "styled-components";
-import {RadioPropsType} from "../global/form.interface.tsx";
+import {FormContextType, FormDataType, RadioPropsType} from "../global/form.interface.tsx";
+import useFormContext from "../hooks/useFormContext.tsx";
+import React from "react";
 
 interface RadioButtonPropsType {
-    options: RadioPropsType[];
+    options: RadioPropsType[] | undefined;
+    onChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
 }
 function RadioButton(props: RadioButtonPropsType) {
+    const { data } = useFormContext() as FormContextType;
     return (
         <>
-        { props.options.map((option: RadioPropsType) => {
+        { props.options && props.options.map((option: RadioPropsType) => {
             return (
-                <RadioWrap>
-                    <Radio type="radio" name={option.name} value={option.value} onChange={props.onChange} />
+                <RadioWrap key={option.label}>
+                    <Radio
+                        type="radio" name={option.name}
+                        value={option.value}
+                        checked={data && data[option.name as keyof FormDataType] === option.value}
+                        onChange={props.onChange} />
                     <label htmlFor={option.value}>{option.label}</label>
                 </RadioWrap>
             )
@@ -19,7 +27,7 @@ function RadioButton(props: RadioButtonPropsType) {
     );
 }
 const RadioWrap = styled.div`
-    margin: 8px 0;
+    margin-top: 4px;
     display: flex;
     align-items: center;
 `

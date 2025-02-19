@@ -4,11 +4,11 @@ import {FormProvider} from "../context/FormContext.tsx";
 
 function FormPage() {
     return (
-        <div>
+        <>
             <FormProvider>
                 <FormLayout />
             </FormProvider>
-        </div>
+        </>
     );
 }
 

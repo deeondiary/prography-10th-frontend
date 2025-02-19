@@ -82,4 +82,9 @@ export const ErrorMessage = styled.div<{ size?: string, width?: string }>`
     font-size: 12px;
     font-weight: 700;
     white-space: pre;
+    
+    @media screen and (max-width: 320px) {
+        max-width: 210px;
+        white-space: break-spaces;
+    }
 `

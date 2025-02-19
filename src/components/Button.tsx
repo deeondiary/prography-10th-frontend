@@ -54,7 +54,7 @@ const ButtonDesign
     flex-shrink: 0;
     width: ${(props) => props.width ? props.width : '100px'};
     color: ${(props) => props.color === COLORS.GR_F9 ? COLORS.GR_DARK : 'white'};;
-    cursor: pointer;
+    cursor: ${(props) => (props.disabled ? '' : 'pointer')};
     border: none;
     border-radius: ${props => props['border-radius']};
     font-size: ${(props) => props.size ? props.size : '12px'};

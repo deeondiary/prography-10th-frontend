@@ -4,6 +4,8 @@ import {COLORS} from "../../global/constants.tsx";
 import useFormContext from "../../hooks/useFormContext.tsx";
 import {FormContextType, FormDataType} from "../../global/form.interface.tsx";
 import {useNavigate} from "react-router-dom";
+import {useState} from "react";
+import FormSubmittedModal from "./FormSubmittedModal.tsx";
 
 declare global {
     interface Window {
@@ -13,26 +15,25 @@ declare global {
 function FormSubmitted() {
     const {data} = useFormContext() as FormContextType;
     const navigate = useNavigate();
-
-    const goSubmittedViewPage = () => {
-        const newWindow: Window | null = window.open('/form-submitted', '_blank');
-        if (newWindow && data) {
-            newWindow.submittedData = data;
-        }
-    }
+    const [submittedModalShow, setSubmittedModalShow] = useState(false);
 
     return (
-        <PageWrapper>
-            <div>{data && data.name}님, 제출 완료 되었습니다 🥳</div><br/>
-            <div>
-                Prography 10기에 지원해주셔서감사합니다.<br/>
-                서류 심사 결과는 입력하신 이메일로 안내드릴 예정입니다.
-            </div>
-            <ButtonWrap>
-                <Button size='xl' onClick={() => navigate('/')} borderRound={true} color={COLORS.BLUE}>메인으로</Button>
-                <Button size='xl' onClick={goSubmittedViewPage} borderRound={true}>제출내용 보기</Button>
-            </ButtonWrap>
-        </PageWrapper>
+        <>
+            <PageWrapper>
+                <div>{data && data.name}님, 제출 완료 되었습니다 🥳</div>
+                <br/>
+                <div>
+                    Prography 10기에 지원해주셔서감사합니다.<br/>
+                    서류 심사 결과는 입력하신 이메일로 안내드릴 예정입니다.
+                </div>
+                <ButtonWrap>
+                    <Button size='xl' onClick={() => navigate('/')} borderRound={true} color={COLORS.BLUE}>메인으로</Button>
+                    <Button size='xl' onClick={() => setSubmittedModalShow(true)} borderRound={true}>제출내용 보기</Button>
+                </ButtonWrap>
+            </PageWrapper>
+            {submittedModalShow &&
+            <FormSubmittedModal close={() => setSubmittedModalShow(false)} />}
+        </>
     );
 }
 const PageWrapper = styled.div`
@@ -42,6 +43,7 @@ const PageWrapper = styled.div`
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-size: 18px;
 `
 const ButtonWrap = styled.div`
     display: flex;

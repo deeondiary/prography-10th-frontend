@@ -3,7 +3,7 @@ import {FormContextType} from "../../global/form.interface.tsx";
 import FormQuestion from "./FormQuestion.tsx";
 import {FormQuestionBlock} from "./forms.styles.tsx";
 
-function Form3() {
+function Form3(props: { submitted: boolean }) {
     const {onChangeInput} = useFormContext() as FormContextType;
     const radioOptions = [
         {
@@ -43,6 +43,7 @@ function Form3() {
             <FormQuestion name="agreement" label="지원 분야를 선택해주세요."
                           onChange={onChangeInput}
                           type="radio"
+                          disabled={props.submitted}
                           radioOptions={radioOptions}
             />
         </FormQuestionBlock>

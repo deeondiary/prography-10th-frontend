@@ -6,6 +6,7 @@ import React from "react";
 interface RadioButtonPropsType {
     options: RadioPropsType[] | undefined;
     onChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
+    disabled?: boolean;
 }
 function RadioButton(props: RadioButtonPropsType) {
     const { data } = useFormContext() as FormContextType;
@@ -17,6 +18,7 @@ function RadioButton(props: RadioButtonPropsType) {
                     <Radio
                         type="radio" name={option.name}
                         value={option.value}
+                        disabled={props.disabled}
                         checked={data && data[option.name as keyof FormDataType] === option.value}
                         onChange={props.onChange} />
                     <label htmlFor={option.value}>{option.label}</label>

@@ -57,9 +57,9 @@ const FormLayout = () => {
     }
 
     const formList: { [key: string]: React.ReactNode } = {
-        '0': <Form1/>,
-        '1': <Form2/>,
-        '2': <Form3/>,
+        '0': <Form1 submitted={false}/>,
+        '1': <Form2 submitted={false}/>,
+        '2': <Form3 submitted={false}/>,
     }
 
 

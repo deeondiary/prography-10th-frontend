@@ -23,5 +23,6 @@ const PageTitle = styled.div`
     font-size: 24px;
     padding: 16px 0;
     white-space: break-spaces;
+    text-align: center;
 `
 export default Heading;

@@ -8,15 +8,15 @@ interface InputPropsType {
     value: string | undefined;
     onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined;
     color?: string;
-    required?: boolean;
     placeholder?: string;
+    disabled?: boolean;
 }
 
 function Input(props: InputPropsType) {
     return (
         <InputStyle
             name={props.name} onChange={props.onChange} placeholder={props.placeholder} value={props.value}
-            color={COLORS.BLUE} required={props.required} />
+            color={COLORS.BLUE} disabled={props.disabled} />
     );
 }
 const InputStyle = styled.input<{ error?: boolean, color?: string }>`

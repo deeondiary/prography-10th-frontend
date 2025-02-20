@@ -45,6 +45,7 @@ export interface FormQuestionPropsType {
     isError?: boolean;
     errorMsg?: string;
     type?: string;
+    disabled?: boolean;
     radioOptions?: RadioOptionsType;
 }
 export interface RadioPropsType {

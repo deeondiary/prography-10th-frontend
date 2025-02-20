@@ -17,9 +17,9 @@ function FormQuestion(props: FormQuestionPropsType) {
             </FormQuestionLabel>
             <FormQuestionInputWrap>
                 {props.type ?
-                    <RadioButton options={props.radioOptions} onChange={props.onChange} /> :
+                    <RadioButton disabled={props.disabled} options={props.radioOptions} onChange={props.onChange} /> :
                     <Input label={props.label} name={props.name} value={props.value}
-                           onChange={props.onChange}
+                           onChange={props.onChange} disabled={props.disabled}
                            placeholder={props.placeholder}/>}
                 {props.isError &&
                     <ErrorMessage>

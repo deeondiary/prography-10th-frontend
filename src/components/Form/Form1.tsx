@@ -1,11 +1,11 @@
 import useFormContext from "../../hooks/useFormContext.tsx";
-import {FormContextType} from "../../global/form.interface.tsx";
+import {FormContextType, RadioOptionsType} from "../../global/form.interface.tsx";
 import FormQuestion from "./FormQuestion.tsx";
 import {FormQuestionBlock} from "./forms.styles.tsx";
 
-function Form1() {
+function Form1(props: { submitted: boolean }) {
     const {onChangeInput} = useFormContext() as FormContextType;
-    const radioOptions = [
+    const radioOptions: RadioOptionsType = [
         {
             name: 'agreement',
             label: '개인정보 수집에 동의합니다.',
@@ -25,8 +25,8 @@ function Form1() {
             ∙ 보유 및 이용기간 : 리쿠르팅과정종료일(3월 7일) 이후 파기
             <div style={{height: '14px'}}/>
             <FormQuestion name="agreement" label="개인정보 수집 동의 여부를 체크 해주세요."
-                          onChange={onChangeInput}
-                          type="radio"
+                          onChange={props.submitted ? undefined : onChangeInput}
+                          type="radio" disabled={props.submitted}
                           radioOptions={radioOptions}
             />
         </FormQuestionBlock>

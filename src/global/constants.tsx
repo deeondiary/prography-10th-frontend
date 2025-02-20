@@ -4,6 +4,7 @@ export const COLORS = {
     ORANGE: '#FF6929',
     YELLOW: '#FFB903',
     BLUE: '#1034FF',
+    BK_333: '#333333',
     GR_DARK: '#999999',
     GR_LIGHT: '#EBEDEE',
     GR_BLUE: '#f6f7f9',

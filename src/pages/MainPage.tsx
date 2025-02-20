@@ -1,10 +1,9 @@
-import React from 'react';
 import Button from "../components/Button.tsx";
 import {COLORS} from "../global/constants.tsx";
 import {useNavigate} from "react-router-dom";
 import styled from "styled-components";
 
-function MainPage(props) {
+function MainPage() {
     const navigate = useNavigate();
     const linkPage = (page: string) => {
         if (page === 'official') {
@@ -21,17 +20,17 @@ function MainPage(props) {
                 </MainLogo>
                 <MainGreetings className="fx-align-center">
                     <div>안녕하세요.</div>
-                    <div>새로운 가치를 만들어가는 IT커뮤니티, <Prography>Prography</Prography>입니다.</div>
+                    <div>새로운 가치를 만들어가는 IT커뮤니티,  Prography입니다.</div>
                 </MainGreetings>
 
                 <div>드디어 Prography 10기 모집이 시작되었습니다.</div>
                 <RolesWrap>
-                    <Button size='m' borderRound={true} color={COLORS.YELLOW} disabled={true}>Product Owner</Button>
-                    <Button size='m' borderRound={true} color={COLORS.BLUE} disabled={true}>Design</Button>
-                    <Button size='m' borderRound={true} disabled={true}>iOS</Button>
-                    <Button size='m' borderRound={true} color={COLORS.ORANGE} disabled={true}>AOS</Button>
-                    <Button size='m' borderRound={true} disabled={true}>Frontend (React)</Button>
-                    <Button size='m' borderRound={true} color={COLORS.BLUE} disabled={true}>Backend (Spring)</Button>
+                    <Button size='m' borderRound={true} color={COLORS.GR_BLUE} disabled={true}>Product Owner</Button>
+                    <Button size='m' borderRound={true} color={COLORS.GR_BLUE} disabled={true}>Design</Button>
+                    <Button size='m' borderRound={true} color={COLORS.GR_BLUE} disabled={true}>iOS</Button>
+                    <Button size='m' borderRound={true} color={COLORS.GR_BLUE} disabled={true}>AOS</Button>
+                    <Button size='m' borderRound={true} color={COLORS.GR_BLUE} disabled={true}>Frontend (React)</Button>
+                    <Button size='m' borderRound={true} color={COLORS.GR_BLUE} disabled={true}>Backend (Spring)</Button>
                 </RolesWrap>
                 <div>
                     총 6개의 파트를 모집합니다.
@@ -69,7 +68,7 @@ const MainWrap = styled.div`
     align-items: center;
     flex-direction: column;
     padding: 32px;
-    font-size: 18px;
+    font-size: 16px;
 `
 const MainLogo = styled.div`
     display: flex;
@@ -79,21 +78,10 @@ const MainLogo = styled.div`
 `
 const MainGreetings = styled.div`
     font-weight: 700;
-    font-size: 28px;
+    font-size: 24px;
     margin: 10px 0 20px 0;
     display: flex;
     flex-direction: column;
-`
-const Prography = styled.span`
-        //background-color: ${COLORS.GR_LIGHT};
-    padding: 2px 2px;
-    // animation: color-change 8s infinite;
-    // @keyframes color-change {
-        //     0% { color: ${COLORS.YELLOW}; }
-        //     30% { color: ${COLORS.PINK}; }
-        //     55% { color: ${COLORS.ORANGE}; }
-        //     100% { color: ${COLORS.BLUE}; }
-    // }
 `
 const RolesWrap = styled.div`
     display: flex;
@@ -113,7 +101,7 @@ const AspectsText = styled.div`
 const ProFunText = styled.div`
     font-weight: 700;
     color: ${COLORS.BLUE};
-    font-size: 24px;
+    font-size: 20px;
 `
 const DetailInfo = styled.div`
     margin: 48px 0;
@@ -123,7 +111,6 @@ const DetailInfo = styled.div`
     gap: 12px;
 `
 const DetailInfoLink = styled.div`
-    //margin-top: 8px;
     font-weight: 600;
     text-decoration: underline;
     margin-left: 4px;

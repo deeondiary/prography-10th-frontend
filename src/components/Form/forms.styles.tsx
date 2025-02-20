@@ -7,7 +7,7 @@ export const FormLayoutWrap = styled.div`
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    padding: 32px;
+    padding: 32px 24px;
 `
 export const FormHeader = styled.div`
     display: flex;

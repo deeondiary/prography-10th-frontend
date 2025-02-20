@@ -2,6 +2,7 @@ import Button from "../components/Button.tsx";
 import {COLORS} from "../global/constants.tsx";
 import {useNavigate} from "react-router-dom";
 import styled from "styled-components";
+import Heading from "../components/Heading.tsx";
 
 function MainPage() {
     const navigate = useNavigate();
@@ -15,14 +16,9 @@ function MainPage() {
     return (
         <div style={{textAlign: 'center'}}>
             <MainWrap>
-                <MainLogo>
-                    <img src="src/assets/img/logo.png" alt="prography-logo" width={100}/>
-                </MainLogo>
-                <MainGreetings className="fx-align-center">
-                    <div>안녕하세요.</div>
-                    <div>새로운 가치를 만들어가는 IT커뮤니티,  Prography입니다.</div>
-                </MainGreetings>
-
+                <Heading>
+                    안녕하세요.<br/>새로운 가치를 만들어가는 IT커뮤니티, Prography입니다.
+                </Heading>
                 <div>드디어 Prography 10기 모집이 시작되었습니다.</div>
                 <RolesWrap>
                     <Button size='m' borderRound={true} color={COLORS.GR_BLUE} disabled={true}>Product Owner</Button>
@@ -69,19 +65,6 @@ const MainWrap = styled.div`
     flex-direction: column;
     padding: 32px;
     font-size: 16px;
-`
-const MainLogo = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 24px;
-`
-const MainGreetings = styled.div`
-    font-weight: 700;
-    font-size: 24px;
-    margin: 10px 0 20px 0;
-    display: flex;
-    flex-direction: column;
 `
 const RolesWrap = styled.div`
     display: flex;

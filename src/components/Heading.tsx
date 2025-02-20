@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import React from "react";
-import imgUrl from '../assets/image/logo.png';
+import imgUrl from '../../public/assets/image/logo.png';
 
 function Heading(props: {children: string | React.ReactNode}) {
     return (

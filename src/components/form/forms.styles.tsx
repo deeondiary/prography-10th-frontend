@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {COLORS} from "../../global/constants.tsx";
 
-// Form Layout (지원양식 레이아웃)
+// form Layout (지원양식 레이아웃)
 export const FormLayoutWrap = styled.div`
     min-height: calc(100vh - 64px);
     display: flex;
@@ -46,7 +46,7 @@ export const FormButtonWrap = styled.div`
     justify-content: space-between;
 `
 
-// Form Question (지원양식 질문)
+// form Question (지원양식 질문)
 export const FormQuestionLabelWrap = styled.div`
     display: flex;
     flex-direction: column;

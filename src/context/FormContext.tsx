@@ -3,7 +3,7 @@ import {
     FormContextType,
     FormDataType,
     PageInfoType,
-} from "../global/form.interface.tsx";
+} from "../types/form.interface.tsx";
 
 
 const FormContext = createContext<FormContextType | undefined>(undefined);

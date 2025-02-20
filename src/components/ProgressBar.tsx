@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Button from "./Button.tsx";
 import {COLORS} from "../global/constants.tsx";
 import useFormContext from "../hooks/useFormContext.tsx";
-import {FormContextType} from "../global/form.interface.tsx";
+import {FormContextType} from "../types/form.interface.tsx";
 
 function ProgressBar() {
     const { page } = useFormContext() as FormContextType;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {FormContextType, FormDataType, RadioPropsType} from "../global/form.interface.tsx";
+import {FormContextType, FormDataType, RadioPropsType} from "../types/form.interface.tsx";
 import useFormContext from "../hooks/useFormContext.tsx";
 import React from "react";
 

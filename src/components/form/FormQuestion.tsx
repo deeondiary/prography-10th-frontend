@@ -7,7 +7,7 @@ import {
 } from "./forms.styles.tsx";
 import Input from "../Input.tsx";
 import RadioButton from "../RadioButton.tsx";
-import {FormQuestionPropsType} from "../../global/form.interface.tsx";
+import {FormQuestionPropsType} from "../../types/form.interface.tsx";
 
 function FormQuestion(props: FormQuestionPropsType) {
     return (

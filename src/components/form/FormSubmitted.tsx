@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Button from "../Button.tsx";
 import {COLORS} from "../../global/constants.tsx";
 import useFormContext from "../../hooks/useFormContext.tsx";
-import {FormContextType, FormDataType} from "../../global/form.interface.tsx";
+import {FormContextType, FormDataType} from "../../types/form.interface.tsx";
 import {useNavigate} from "react-router-dom";
 import {useState} from "react";
 import FormSubmittedModal from "./FormSubmittedModal.tsx";

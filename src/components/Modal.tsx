@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import useFormContext from "../hooks/useFormContext.tsx";
-import {FormContextType} from "../global/form.interface.tsx";
+import {FormContextType} from "../types/form.interface.tsx";
 import {COLORS} from "../global/constants.tsx";
-import imgUrl from "../assets/image/warning.png";
+import imgUrl from "../../public/assets/image/warning.png";
 
 function Modal() {
     const {setModalShow, modalMsg} = useFormContext() as FormContextType;

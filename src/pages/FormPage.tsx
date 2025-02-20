@@ -1,4 +1,4 @@
-import FormLayout from "../components/Form/FormLayout.tsx";
+import FormLayout from "../components/form/FormLayout.tsx";
 import {FormProvider} from "../context/FormContext.tsx";
 
 

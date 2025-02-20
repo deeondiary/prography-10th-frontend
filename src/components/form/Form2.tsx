@@ -1,5 +1,5 @@
 import useFormContext from "../../hooks/useFormContext.tsx";
-import {FormContextType} from "../../global/form.interface.tsx";
+import {FormContextType} from "../../types/form.interface.tsx";
 import {FormQuestionBlock} from "./forms.styles.tsx";
 import FormQuestion from "./FormQuestion.tsx";
 

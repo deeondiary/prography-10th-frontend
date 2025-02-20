@@ -2,7 +2,7 @@ import useFormContext from "../../hooks/useFormContext.tsx";
 import Button from "../Button.tsx";
 import Form1 from "./Form1.tsx";
 import React from "react";
-import {FormContextType, FormDataType} from "../../global/form.interface.tsx";
+import {FormContextType, FormDataType} from "../../types/form.interface.tsx";
 import ProgressBar from "../ProgressBar.tsx";
 import {
     Divider,
@@ -17,7 +17,7 @@ import {COLORS} from "../../global/constants.tsx";
 import Form3 from "./Form3.tsx";
 import FormSubmitted from "./FormSubmitted.tsx";
 import Heading from "../Heading.tsx";
-import imgUrl from '../../assets/image/flower_blue.png';
+import imgUrl from '../../../public/assets/image/flower_blue.png';
 
 const FormLayout = () => {
     const {

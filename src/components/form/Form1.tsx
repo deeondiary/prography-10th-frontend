@@ -1,5 +1,5 @@
 import useFormContext from "../../hooks/useFormContext.tsx";
-import {FormContextType, RadioOptionsType} from "../../global/form.interface.tsx";
+import {FormContextType, RadioOptionsType} from "../../types/form.interface.tsx";
 import FormQuestion from "./FormQuestion.tsx";
 import {FormQuestionBlock} from "./forms.styles.tsx";
 

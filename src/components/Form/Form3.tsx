@@ -28,7 +28,7 @@ function Form3() {
         },
         {
             name: 'role',
-            label: '백엔드',
+            label: '안드로이드',
             value: 'android',
         },
         {

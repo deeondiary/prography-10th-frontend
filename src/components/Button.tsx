@@ -33,7 +33,7 @@ function Button(props: ButtonPropsType) {
                 setWidth('140px');
                 break;
             case 'xl':
-                setFontSize('24px');
+                setFontSize('18px');
                 setWidth('180px');
                 break;
         }

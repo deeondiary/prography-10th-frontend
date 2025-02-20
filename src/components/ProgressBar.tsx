@@ -13,6 +13,8 @@ function ProgressBar() {
             <Button disabled={true} size='s' borderRound={true} color={page === 1 ? COLORS.PINK : COLORS.GR_F9}>2.기본정보</Button>
             <CenterLine />
             <Button disabled={true} size='s' borderRound={true} color={page === 2 ? COLORS.PINK : COLORS.GR_F9}>3.지원정보</Button>
+            <CenterLine />
+            <Button disabled={true} size='s' borderRound={true} color={page === 3 ? COLORS.PINK : COLORS.GR_F9}>제출 완료</Button>
         </BarWrap>
     );
 }

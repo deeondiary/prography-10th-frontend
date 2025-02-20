@@ -2,7 +2,7 @@ import useFormContext from "../../hooks/useFormContext.tsx";
 import Button from "../Button.tsx";
 import Form1 from "./Form1.tsx";
 import React from "react";
-import {FormContextType} from "../../global/form.interface.tsx";
+import {FormContextType, FormDataType} from "../../global/form.interface.tsx";
 import ProgressBar from "../ProgressBar.tsx";
 import {
     Divider,
@@ -25,6 +25,7 @@ const FormLayout = () => {
         validityCheck,
         modalShow,
         setModalShow,
+        data
     } = useFormContext() as FormContextType;
     const goPrevPage = () => {
         if (setPage) {
@@ -34,7 +35,7 @@ const FormLayout = () => {
     const goNextPage = () => {
         if (validityCheck()) {
             if (page === 2) {
-                window.alert('submit');
+                submitForm();
             } else {
                 if (setPage) {
                     setPage(page + 1);
@@ -44,9 +45,13 @@ const FormLayout = () => {
             setModalShow(true);
         }
     }
-    const handleSubmit = (e: { preventDefault: () => void; }) => {
-        e.preventDefault()
-        // console.log(JSON.stringify(data))
+
+    // 지원양식 제출 (API 통신 위한 폼 데이터 구성)
+    const submitForm = () => {
+        const formData: FormData = new FormData;
+        Object.entries(data as FormDataType).forEach(([key, value]) => {
+            formData.append(key, value);
+        });
     }
 
     const formList: { [key: string]: React.ReactNode } = {
@@ -73,12 +78,13 @@ const FormLayout = () => {
                         {pageInfo[page].desc}
                     </FormDescription>
                     <Divider/>
-                    <form onSubmit={() => handleSubmit}>
+                    <form onSubmit={submitForm}>
                         {formList[page]}
                     </form>
                 </div>
                 <FormButtonWrap>
-                    <Button size="s" disabled={page === 0} color={page === 0 ? COLORS.GR_LIGHT : ''} onClick={() => goPrevPage()}>{'이전'}</Button>
+                    <Button size="s" disabled={page === 0} color={page === 0 ? COLORS.GR_LIGHT : ''}
+                            onClick={() => goPrevPage()}>{'이전'}</Button>
                     <Button size="s" onClick={() => goNextPage()}>{page === 2 ? '제출' : '다음'}</Button>
                 </FormButtonWrap>
             </FormLayoutWrap>

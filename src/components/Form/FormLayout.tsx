@@ -17,6 +17,7 @@ import {COLORS} from "../../global/constants.tsx";
 import Form3 from "./Form3.tsx";
 import FormSubmitted from "./FormSubmitted.tsx";
 import Heading from "../Heading.tsx";
+import imgUrl from '../../assets/image/flower_blue.png';
 
 const FormLayout = () => {
     const {
@@ -73,7 +74,7 @@ const FormLayout = () => {
                         <>
                             <FormDescription>
                                 <FormTitleWrap>
-                                    <img src="src/assets/img/flower_blue.png" className="rotate" alt="flower-img"
+                                    <img src={imgUrl} className="rotate" alt="flower-img"
                                          width={16}/>
                                     <FormTitleText>{pageInfo[page].title}</FormTitleText>
                                 </FormTitleWrap>

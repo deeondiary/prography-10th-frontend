@@ -2,6 +2,7 @@ import styled from "styled-components";
 import useFormContext from "../hooks/useFormContext.tsx";
 import {FormContextType} from "../global/form.interface.tsx";
 import {COLORS} from "../global/constants.tsx";
+import imgUrl from "../assets/image/warning.png";
 
 function Modal() {
     const {setModalShow, modalMsg} = useFormContext() as FormContextType;
@@ -10,7 +11,7 @@ function Modal() {
         <ModalWrap>
             <ModalContainer>
                 <ModalContents>
-                    <img src="../../src/assets/img/warning.png" width={32} alt="warning-image"/>
+                    <img src={imgUrl} width={32} alt="warning-image"/>
                     {modalMsg}</ModalContents>
                 <ModalButton onClick={() => setModalShow(false)}>
                     확인

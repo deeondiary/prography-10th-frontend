@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import React from "react";
+import imgUrl from '../assets/image/logo.png';
 
 function Heading(props: {children: string | React.ReactNode}) {
     return (
         <PageWrap>
-            <img src="src/assets/img/logo.png" alt="prography-logo" width={100}/>
+            <img src={imgUrl} alt="prography-logo" width={100}/>
             <PageTitle>{props.children}</PageTitle>
         </PageWrap>
     );

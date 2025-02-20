@@ -54,6 +54,7 @@ function MainPage() {
                     </div>
                 </DetailInfo>
                 <Button size="l" borderRound={true} onClick={() => navigate('/form')}>지원하기</Button>
+                <div style={{height: '24px'}}></div>
             </MainWrap>
         </div>
     );

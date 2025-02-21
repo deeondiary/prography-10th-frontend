@@ -20,7 +20,7 @@ function Button(props: ButtonPropsType) {
         switch (props.size) {
             case 's':
                 setFontSize('13px');
-                setWidth('80px');
+                setWidth('75px');
                 break;
             case 'm':
                 setFontSize('15px');
@@ -50,13 +50,16 @@ const ButtonDesign
     background-color: ${(props) => props.color ? props.color : COLORS.PINK};
     padding: 12px;
     flex-shrink: 0;
-    width: ${(props) => props.width ? props.width : '100px'};
+    min-width: ${(props) => props.width ? props.width : '100px'};
     color: ${(props) => props.color === COLORS.GR_F9 ? COLORS.GR_DARK : props.color === COLORS.GR_BLUE ? COLORS.BK_333 : 'white'};;
     cursor: ${(props) => (props.disabled ? '' : 'pointer')};
     border: none;
     border-radius: ${props => props['border-radius']};
     font-size: ${(props) => props.size ? props.size : '12px'};
     font-weight: 700;
+    white-space: pre;
+    //white-space: pre-wrap;
+    //word-break: keep-all;
 `
 
 export default Button;

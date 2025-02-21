@@ -20,14 +20,14 @@ function MainPage() {
                     안녕하세요.<br/>새로운 가치를 만들어가는 IT커뮤니티, Prography입니다.
                 </Heading>
                 <div>드디어 Prography 10기 모집이 시작되었습니다.</div>
-                <RolesWrap>
+                <RolesButtonWrap>
                     <Button size='m' borderRound={true} color={COLORS.GR_BLUE} disabled={true}>Product Owner</Button>
                     <Button size='m' borderRound={true} color={COLORS.GR_BLUE} disabled={true}>Design</Button>
                     <Button size='m' borderRound={true} color={COLORS.GR_BLUE} disabled={true}>iOS</Button>
                     <Button size='m' borderRound={true} color={COLORS.GR_BLUE} disabled={true}>AOS</Button>
                     <Button size='m' borderRound={true} color={COLORS.GR_BLUE} disabled={true}>Frontend (React)</Button>
                     <Button size='m' borderRound={true} color={COLORS.GR_BLUE} disabled={true}>Backend (Spring)</Button>
-                </RolesWrap>
+                </RolesButtonWrap>
                 <div>
                     총 6개의 파트를 모집합니다.
                 </div>
@@ -67,13 +67,13 @@ const MainWrap = styled.div`
     padding: 32px;
     font-size: 16px;
 `
-const RolesWrap = styled.div`
+const RolesButtonWrap = styled.div`
     display: flex;
     justify-content: center;
     flex-direction: row;
     gap: 8px;
     flex-wrap: wrap;
-    margin: 32px 0 24px 0;
+    margin: 32px 0;
 `
 const AspectsText = styled.div`
     display: flex;

@@ -49,8 +49,9 @@ const FormLayout = () => {
         }
     }
 
-    // 지원양식 제출 (API 통신 위한 폼 데이터 구성)
+    // 📌 지원양식 제출 (API 통신 위한 폼 데이터 구성)
     const submitForm = () => {
+        console.log('제출 데이터 내용', data);
         const formData: FormData = new FormData;
         Object.entries(data as FormDataType).forEach(([key, value]) => {
             formData.append(key, value);
